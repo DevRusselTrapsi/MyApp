@@ -1,20 +1,51 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+<!--Show toggle Page-->
+<ion-menu content-id="main-content" type="overlay">
+    <ion-header>
+       <ion-toolbar>
+         <ion-title>Homies</ion-title>
+       </ion-toolbar>
+    </ion-header>
+   <ion-content>
+       <ion-list>
+           <ion-list-header>
+             Home
+           </ion-list-header>
+       </ion-list> 
+       <ion-list>
+       <ion-menu-toggle auto-hide="false">
+         <ion-item [routerLink]="['/login']">
+            <ion-icon slot="start" name="log-in"></ion-icon>
+            <ion-label>Login</ion-label>
+         </ion-item>
+       </ion-menu-toggle>
+       <ion-menu-toggle auto-hide="false">
+        <ion-item [routerLink]="['/signup']">
+            <ion-icon slot="start" name="arrow-redo-circle"></ion-icon>
+           <ion-label>Signup</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+     </ion-list> 
+   </ion-content>
+  </ion-menu> 
+<!--Front Page-->
+   <ion-page class="ion-page" id="main-content">
+    <ion-header>
+       <ion-toolbar color="primary">
+         <ion-buttons>
+           <ion-menu-toggle>
+             <ion-button>
+               <ion-icon slot="start" name="menu"></ion-icon>
+               <ion-title>Home</ion-title>
+             </ion-button>
+           </ion-menu-toggle>
+         </ion-buttons>
+       </ion-toolbar>
+     </ion-header>
+       <!--Main page-->
+   <ion-content class="ion-padding">
+       <p>I love my Family so much</p>
+   </ion-content>
+   <!--End -->
+  </ion-page>
+  <ion-menu-controller></ion-menu-controller>
+  
