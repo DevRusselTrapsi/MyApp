@@ -5,13 +5,20 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-label position="floating">Email</ion-label>
-    <ion-input type="email"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Password</ion-label>
-    <ion-input type="password"></ion-input>
-  </ion-item>
-  <ion-button [routerLink]="['/home']" shape="round">Login</ion-button>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" id="username" formControlName="username"></ion-input>
+        </ion-item>
+    </ion-card-content>
+    <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" id="password" formControlName="password"></ion-input>
+         </ion-item>
+    </ion-card-content>
+    <!--Button-->
+      <ion-button type="submit" shape="round">Login</ion-button>
+  </form>
 </ion-content>

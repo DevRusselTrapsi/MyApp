@@ -5,25 +5,34 @@
 </ion-header>
 
 <ion-content>
-<ion-item>
-  <ion-label position="fixed">FirstName</ion-label>
-  <ion-input></ion-input>
-</ion-item>
-<ion-item>
-  <ion-label position="fixed">LastName</ion-label>
-  <ion-input></ion-input>
-</ion-item>
-<ion-item>
-  <ion-label position="fixed">MiddleName</ion-label>
-  <ion-input></ion-input>
-</ion-item>
-<ion-item>
-  <ion-label position="fixed">Email</ion-label>
-  <ion-input></ion-input>
-</ion-item>
-<ion-item>
-  <ion-label position="fixed">Password</ion-label>
-  <ion-input placeholder="Password" type="password"></ion-input>
-</ion-item>
-<ion-button [routerLink]="['/login']" shape="round" button>Sign up</ion-button>
+  <ion-card>  
+<!--FormGroup Reactiveness-->
+<!--Also use Validators-->
+<!--I use FormBuilder here in signup-->
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <ion-list>
+    <ion-label position="floating">FirstName</ion-label>
+    <ion-input type="text" id="fname" formControlName="firstname"></ion-input>
+  </ion-list>
+
+  <ion-list>
+    <ion-label position="floating">LastName</ion-label>
+    <ion-input type="text" id="lname" formControlName="lastname"></ion-input>
+  </ion-list>
+
+  <ion-list>
+    <ion-label position="floating">MiddleName</ion-label>
+    <ion-input type="text" id="mname" formControlName="middlename"></ion-input>
+  </ion-list>
+  <ion-list>
+    <ion-label position="floating">Username</ion-label>
+    <ion-input type="text" id="mailname" formControlName="username"></ion-input>
+  </ion-list>
+  <ion-list>
+    <ion-label position="floating">Password</ion-label>
+    <ion-input type="Password" id="pass" formControlName="password"></ion-input>
+  </ion-list>
+  <ion-button shape="round" type="Submit">Sign up</ion-button>
+  </form>
+</ion-card>
 </ion-content>

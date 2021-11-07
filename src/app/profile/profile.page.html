@@ -4,6 +4,46 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  sample content
+<ion-content>
+ <ion-card>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <ion-list>
+        <ion-item>
+        <ion-label>FirstName</ion-label>
+        <ion-input type="text" id="fname" formControlName="firstname"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>LastName</ion-label>
+        <ion-input type="text" id="lname" formControlName="lastname"></ion-input>
+      </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+        <ion-label>Age</ion-label>
+        <ion-input type="text" formControlName="age"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Contact Number</ion-label>
+        <ion-input type="text" formControlName="contact"></ion-input>
+      </ion-item>
+      </ion-list>
+      
+    <ion-list formGroupName="address">
+      <ion-list-header >Address</ion-list-header>
+        <ion-item>
+          <ion-label>Province</ion-label>
+          <ion-input type="text" formControlName="province"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Barangay</ion-label>
+          <ion-input type="text" formControlName="barangay"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Street</ion-label>
+          <ion-input type="text" formControlName="street"></ion-input>
+        </ion-item>
+    </ion-list>
+      <ion-button shape="round" type="Submit">Sign up</ion-button>
+  </form>
+</ion-card>
 </ion-content>
