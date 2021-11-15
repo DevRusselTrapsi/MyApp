@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-
+import { Validators } from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -9,8 +9,8 @@ import { FormBuilder } from '@angular/forms';
 export class LoginPage implements OnInit {
   loginForm = this.fb.group({
 
-    username: [''],
-    password: [''],
+    username: ['',Validators.required],
+    password: ['',Validators.required],
 
   });
   constructor(private fb: FormBuilder) { }
@@ -20,5 +20,6 @@ export class LoginPage implements OnInit {
 
   onSubmit(){
     console.log(this.loginForm)
+    alert('Success!!');
   }
 }

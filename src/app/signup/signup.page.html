@@ -1,38 +1,42 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Signup</ion-title>
+    <ion-title><ion-icon [routerLink]="['/home']" name="arrow-back"></ion-icon>
+      Signup
+    </ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content>
-  <ion-card>  
 <!--FormGroup Reactiveness-->
 <!--Also use Validators-->
 <!--I use FormBuilder here in signup-->
-  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-  <ion-list>
-    <ion-label position="floating">FirstName</ion-label>
-    <ion-input type="text" id="fname" formControlName="firstname"></ion-input>
-  </ion-list>
+<ion-content>
+  <ion-card>  
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <ion-list>
+        <ion-label position="floating">FirstName</ion-label>
+        <ion-input type="text" id="fname" formControlName="firstname"></ion-input>
+      </ion-list>
 
-  <ion-list>
-    <ion-label position="floating">LastName</ion-label>
-    <ion-input type="text" id="lname" formControlName="lastname"></ion-input>
-  </ion-list>
+      <ion-list>
+        <ion-label position="floating">LastName</ion-label>
+        <ion-input type="text" id="lname" formControlName="lastname"></ion-input>
+      </ion-list>
 
-  <ion-list>
-    <ion-label position="floating">MiddleName</ion-label>
-    <ion-input type="text" id="mname" formControlName="middlename"></ion-input>
-  </ion-list>
-  <ion-list>
-    <ion-label position="floating">Username</ion-label>
-    <ion-input type="text" id="mailname" formControlName="username"></ion-input>
-  </ion-list>
-  <ion-list>
-    <ion-label position="floating">Password</ion-label>
-    <ion-input type="Password" id="pass" formControlName="password"></ion-input>
-  </ion-list>
-  <ion-button shape="round" type="Submit">Sign up</ion-button>
-  </form>
-</ion-card>
+      <ion-list>
+        <ion-label position="floating">MiddleName</ion-label>
+       <ion-input type="text" id="mname" formControlName="middlename"></ion-input>
+      </ion-list>
+
+      <ion-list>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input type="text" id="mailname" formControlName="username"></ion-input>
+      </ion-list>
+
+      <ion-list>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="Password" id="pass" formControlName="password"></ion-input>
+      </ion-list>
+
+      <ion-button shape="round" type="Submit">Sign up</ion-button>
+    </form>
+  </ion-card>
 </ion-content>

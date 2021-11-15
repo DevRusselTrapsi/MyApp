@@ -1,18 +1,32 @@
-<!--Show toggle Page-->
+<!--toggle Page-->
 <ion-menu content-id="main-content" type="overlay">
     <ion-header>
        <ion-toolbar>
-         <ion-title>Homies</ion-title>
+          <ion-title>
+            {{ title }}
+          </ion-title>
        </ion-toolbar>
     </ion-header>
    <ion-content>
        <ion-list>
            <ion-list-header>
-             Home
+            {{ title }}
            </ion-list-header>
        </ion-list> 
        <ion-list>
+        <ion-menu-toggle auto-hide="false">
+          <ion-item [routerLink]="['/home']">
+              <ion-icon slot="start" name="home"></ion-icon>
+              <ion-label>Home</ion-label>
+          </ion-item>
+       </ion-menu-toggle>
        <ion-menu-toggle auto-hide="false">
+        <ion-item [routerLink]="['/profile']">
+            <ion-icon slot="start" name="person"></ion-icon>
+            <ion-label>Profile</ion-label>
+        </ion-item>
+     </ion-menu-toggle>
+     <ion-menu-toggle auto-hide="false">
          <ion-item [routerLink]="['/login']">
             <ion-icon slot="start" name="log-in"></ion-icon>
             <ion-label>Login</ion-label>
@@ -24,10 +38,18 @@
            <ion-label>Signup</ion-label>
         </ion-item>
       </ion-menu-toggle>
+      <ion-menu-toggle auto-hide="false">
+        <ion-item [routerLink]="['/about']">
+            <ion-icon slot="start" name="information-circle"></ion-icon>
+            <ion-label>About</ion-label>
+        </ion-item>
+     </ion-menu-toggle>
      </ion-list> 
    </ion-content>
   </ion-menu> 
-<!--Front Page-->
+<!--end-->
+
+<!--Main Page-->
    <ion-page class="ion-page" id="main-content">
     <ion-header>
        <ion-toolbar color="primary">
@@ -35,20 +57,27 @@
            <ion-menu-toggle>
              <ion-button>
                <ion-icon slot="start" name="menu"></ion-icon>
-               <ion-title>Home</ion-title>
+               <ion-title>{{ title }}</ion-title>
              </ion-button>
            </ion-menu-toggle>
          </ion-buttons>
        </ion-toolbar>
      </ion-header>
-       <!--Main page-->
+     <!--Content-->
    <ion-content class="ion-padding">
-       <p>I love my Family so much</p>
+       <div>
        <ion-card>
-         I love you
+          <ion-card-content>
+            <p [id]="id" [style.color]="fontColor">My name is Mark Russel B. Trapsi and Im trying to learn the lesson of my 
+              teacher but I'm experiencing difficulties right now. Can someone save me in my situation?</p><br>
+              <img src="assets/icon/favicon.png"><br><br>
+              
+              <ion-button (click)="sayMessage()">Message</ion-button>
+          </ion-card-content>
        </ion-card>
+      </div>
    </ion-content>
-   <!--End -->
+    <!--End Content-->
   </ion-page>
-  <ion-menu-controller></ion-menu-controller>
+  
   
